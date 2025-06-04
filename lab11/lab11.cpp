@@ -26,6 +26,22 @@ void save_data(const string& filename, const vector<double>& data) {
     file.close();
 }
 
+double normalization_check(const vector<vector<double>>& absorbance, const vector<double>& transmitance, const vector<double>& reflectance) {
+    double norm = 0;
+    for (int i = 0; i < absorbance.size(); i++) {
+        for (int j = 0; j < absorbance[i].size(); j++) {
+            norm += absorbance[i][j];
+        }
+    }
+    for (int i = 0; i < transmitance.size(); i++) {
+        norm += transmitance[i];
+    }
+    for (int i = 0; i < reflectance.size(); i++) {
+        norm += reflectance[i];
+    }
+    return norm;
+}
+
 
 int main(){  
     for (int i = 1; i <= 8; i++) {
@@ -129,5 +145,6 @@ int main(){
         save_data("abs_" + to_string(i) + ".dat", ob.absorption);
         save_data("trans_" + to_string(i) + ".dat", ob.transmittance);
         save_data("refl_" + to_string(i) + ".dat", ob.reflectance);
+        cout << "Normalization check for " << i << ": " << normalization_check(ob.absorption, ob.transmittance, ob.reflectance)/static_cast<double>(N) << endl;
     }
 }
