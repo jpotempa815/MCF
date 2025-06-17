@@ -1,0 +1,3 @@
+C:/Users/julia/Desktop/studia/semestr 8/MCF/lab14/cmake-build-debug/CMakeFiles/lab14.dir
+C:/Users/julia/Desktop/studia/semestr 8/MCF/lab14/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/julia/Desktop/studia/semestr 8/MCF/lab14/cmake-build-debug/CMakeFiles/rebuild_cache.dir
